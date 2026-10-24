@@ -2,6 +2,7 @@ import { eq } from "drizzle-orm";
 import webpush from "web-push";
 import { getDb, schema } from "@/lib/database/client";
 import { log } from "@/lib/logging";
+import { sendNotificationEmail } from "./email";
 
 export type NotificationCategory =
   | "NEW_ELIGIBLE"
@@ -42,7 +43,8 @@ function pushReady() {
 }
 
 /**
- * Creates an in-app notification (deduplicated by dedupeKey) and fans out to push.
+ * Creates an in-app notification (deduplicated by dedupeKey) and fans out to push and,
+ * if enabled per category, an email to the user's own connected mailbox.
  * Payload values are rendered client-side via the `notifications.<category>` message keys,
  * so notifications appear in the user's current language.
  */
@@ -50,7 +52,7 @@ export async function notify(userId: string, category: NotificationCategory, ded
   const db = getDb();
   const [prefs] = await db.select({ p: schema.searchPreferences.notificationPrefs }).from(schema.searchPreferences).where(eq(schema.searchPreferences.userId, userId));
   const channels = { ...DEFAULT_CHANNELS, ...(prefs?.p?.[category] ?? {}) };
-  if (!channels.inApp && !channels.push) return null;
+  if (!channels.inApp && !channels.push && !channels.email) return null;
 
   const [n] = await db
     .insert(schema.notifications)
@@ -75,6 +77,13 @@ export async function notify(userId: string, category: NotificationCategory, ded
         if (status === 404 || status === 410) await db.delete(schema.pushSubscriptions).where(eq(schema.pushSubscriptions.id, s.id));
         else log("warn", "push failed", { status });
       }
+    }
+  }
+  if (channels.email) {
+    try {
+      if (await sendNotificationEmail({ id: n.id, userId, category, payload, link: link ?? null })) delivered.push("email");
+    } catch (e) {
+      log("warn", "notification email failed", { err: String((e as Error).message ?? e) });
     }
   }
   await db.update(schema.notifications).set({ deliveredChannels: delivered }).where(eq(schema.notifications.id, n.id));

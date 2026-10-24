@@ -6,7 +6,7 @@ Last updated: 2026-10-24. States: COMPLETED (implemented) · TESTED (implemented
 
 | # | Milestone | State | Notes |
 |---|---|---|---|
-| 1 | Project foundation | TESTED | Next.js 16, TypeScript, Drizzle and PostgreSQL schema with 28 tables and migrations, lint and typecheck clean. Built in the session repo `dyzsb87z2v-bit/home-` on branch `claude/berlin-rent-hunter-ai`. No separate `berlin-rent-hunter-ai` repo was created (see Blockers). |
+| 1 | Project foundation | TESTED | Next.js 16, TypeScript, Drizzle and PostgreSQL schema with 28 tables and migrations, lint and typecheck clean. Built in the repo `dyzsb87z2v-bit/home-`, merged to `main` via PR #1. No separate `berlin-rent-hunter-ai` repo was created (see Blockers). |
 | 2 | Bilingual dashboard | TESTED | fa (RTL) and de (LTR), all 17 sections, PWA. Playwright covers language switching, desktop and an iPhone 14 viewport. |
 | 3 | Source infrastructure | TESTED | Registry of 51 researched sources plus manual import, an adapter interface, feed / email-alert / manual / test adapters, robots.txt handling, rate limits, honest status computation. |
 | 4 | Database & matching | TESTED | Eligibility engine, scoring, cross-source dedupe with idempotent upserts. |
@@ -14,7 +14,7 @@ Last updated: 2026-10-24. States: COMPLETED (implemented) · TESTED (implemented
 | 6 | Application automation | TESTED | Template plus validated optional AI sentence, drafts, guarded submission, audit, UNCERTAIN handling. Tested against a simulated mailbox only. |
 | 7 | Reply management | TESTED | Rules plus optional AI classification, scam screening, viewing extraction, follow-ups. Tested against the simulated mailbox. |
 | 8 | Cloud monitoring | IN_PROGRESS | pg-boss worker with schedules, retries, dead letters and heartbeat runs locally. Not deployed: needs a hosting account and approval to pay. |
-| 9 | Security & testing | TESTED | 66 unit, 18 integration and 6 e2e tests pass. |
+| 9 | Security & testing | TESTED | 68 unit, 24 integration and 6 e2e tests pass. |
 | 10 | Deployment & verification | NOT_STARTED | Dockerfile, Render blueprint and CI workflow are written but none has run. Needs authorization. |
 
 ## Features
@@ -40,8 +40,8 @@ Last updated: 2026-10-24. States: COMPLETED (implemented) · TESTED (implemented
 | Follow-ups (config, never after rejection or stop request, max count) | TESTED | integration |
 | Notifications (in-app, dedupe, per-category prefs) | TESTED | integration + e2e |
 | Web push (VAPID, service worker) | COMPLETED | No VAPID keys or real device test. iOS needs the PWA installed. |
-| Email notifications to the user | NOT_STARTED | Only in-app and push exist. |
-| Document vault (AES-256-GCM, magic-byte check, audit, retention date, delete) | COMPLETED | Manually verifiable in the UI. No automated test yet. Retention auto-deletion job: NOT_STARTED. |
+| Email notifications to the user | TESTED | Opt-in per category in Settings, sent only to your own connected mailbox, in your language, deduplicated. Integration-tested with the simulated mailbox; not yet sent through real Gmail. |
+| Document vault (AES-256-GCM, magic-byte check, audit, retention date, delete) | TESTED | Integration tests cover encryption at rest and the daily retention job (03:45 Berlin; deletes the day after the retention date, audited). The upload form itself is not covered by an automated test. |
 | Map (MapLibre, Spandau boundary, clustering) | COMPLETED | Page renders. Tiles were blocked in the sandbox, so tile display is unverified. |
 | Activity log / audit log | TESTED | e2e checks activity entries |
 | Data export and account deletion | COMPLETED | Not covered by automated tests. |
@@ -50,9 +50,9 @@ Last updated: 2026-10-24. States: COMPLETED (implemented) · TESTED (implemented
 
 ## Blockers (need the user)
 
-0. **URGENT: the repository `dyzsb87z2v-bit/home-` is PUBLIC.** It contains the household facts from the brief: name, household composition and income (in templates and setup code). Make it private now: GitHub → Settings → General → Danger Zone → Change visibility → Private. Nationality data was removed from the code in a later commit, but it is still in the git history of branch `claude/berlin-rent-hunter-ai`.
+0. **URGENT: the repository `dyzsb87z2v-bit/home-` is PUBLIC.** It contains the household facts from the brief: name, household composition and income (in templates and setup code). Make it private now: GitHub → Settings → General → Danger Zone → Change visibility → Private. Nationality data was removed from the code in a later commit, but it is still in the git history, which is now part of `main`.
 
-1. **GitHub:** this session can only access `dyzsb87z2v-bit/home-`, so the code lives there on branch `claude/berlin-rent-hunter-ai`. Creating a new private `berlin-rent-hunter-ai` repository needs your go-ahead, or you can create it and move the code.
+1. **GitHub:** this session can only access `dyzsb87z2v-bit/home-`, so the code lives there on `main`. The GitHub tools available to Claude cannot change repository visibility, so blocker 0 needs you. Creating a new private `berlin-rent-hunter-ai` repository needs your go-ahead, or you can create it and move the code.
 2. **Hosting:** pick a provider and approve the cost (estimate in `docs/deployment.md`).
 3. **Gmail:** create a Google OAuth client (Web), set the two env vars, then click "Connect Gmail" in Settings.
 4. **Anthropic API key** (optional): needed for Persian translation of free text, AI extraction and AI reply classification.

@@ -3,6 +3,7 @@ import { getDb, schema } from "@/lib/database/client";
 import { log, recordActivity } from "@/lib/logging";
 import { runAutopilot } from "@/features/application-management/service";
 import { scanFollowUps } from "@/features/application-management/followups";
+import { purgeExpiredDocuments } from "@/features/documents/retention";
 import { syncEmailAccount } from "@/features/email/sync";
 import { dueConnections, runConnectionSync } from "@/features/sources/sync";
 import { enqueue, Q } from "./queue";
@@ -68,6 +69,11 @@ export async function handleListingExpiry() {
     .where(and(eq(schema.properties.availability, "AVAILABLE"), lt(schema.properties.lastVerifiedAt, cutoff)))
     .returning({ id: schema.properties.id });
   return { expired: res.length };
+}
+
+/** Deletes documents past their user-set retention date. */
+export async function handleDocumentRetention() {
+  return purgeExpiredDocuments();
 }
 
 export async function handleHealth() {

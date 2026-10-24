@@ -8,6 +8,7 @@ export const Q = {
   processProperty: "process-property",
   followUpScan: "follow-up-scan",
   listingExpiry: "listing-expiry",
+  documentRetention: "document-retention",
   health: "health",
   deadLetter: "dead-letter",
 } as const;
@@ -39,6 +40,7 @@ export function getBoss(role: "worker" | "client" = "client"): Promise<PgBoss> {
       await b.createQueue(Q.processProperty, { policy: "stately", retryLimit: 0, deadLetter: Q.deadLetter, expireInSeconds: 600 });
       await b.createQueue(Q.followUpScan, { policy: "singleton", retryLimit: 0 });
       await b.createQueue(Q.listingExpiry, { policy: "singleton", retryLimit: 1 });
+      await b.createQueue(Q.documentRetention, { policy: "singleton", retryLimit: 1 });
       await b.createQueue(Q.health, { policy: "singleton", retryLimit: 0 });
       return b;
     })().catch((e) => {

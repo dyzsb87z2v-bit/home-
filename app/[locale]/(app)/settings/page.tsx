@@ -96,6 +96,7 @@ export default async function SettingsPage({ searchParams }: { searchParams: Pro
                   <th className="py-1 text-start font-medium" />
                   <th className="w-20 py-1 font-medium">{t("settings.channelInApp")}</th>
                   <th className="w-20 py-1 font-medium">{t("settings.channelPush")}</th>
+                  <th className="w-20 py-1 font-medium">{t("settings.channelEmail")}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
@@ -104,6 +105,7 @@ export default async function SettingsPage({ searchParams }: { searchParams: Pro
                     <td className="py-2">{t(`notifications.${c}`, { title: "…", warm: "…", subject: "…", when: "…", code: "…", to: "…" })}</td>
                     <td className="text-center"><input type="checkbox" name={`${c}.inApp`} defaultChecked={np[c]?.inApp ?? true} className="h-5 w-5" aria-label={t("settings.channelInApp")} /></td>
                     <td className="text-center"><input type="checkbox" name={`${c}.push`} defaultChecked={np[c]?.push ?? true} className="h-5 w-5" aria-label={t("settings.channelPush")} /></td>
+                    <td className="text-center"><input type="checkbox" name={`${c}.email`} defaultChecked={np[c]?.email ?? false} className="h-5 w-5" aria-label={t("settings.channelEmail")} /></td>
                   </tr>
                 ))}
               </tbody>

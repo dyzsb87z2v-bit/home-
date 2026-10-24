@@ -3,7 +3,7 @@
 - **Authentication:** a single private account (no public sign-up). Passwords use bcrypt (cost 12). Sessions are HS256 JWTs bound to a revocable `sessions` row, in httpOnly SameSite=Lax cookies. Failed logins are rate-limited (10 per IP per 15 min). The Proxy does an optimistic check, and every page, action and API route is authorized server-side.
 - **Data isolation:** every query is scoped by `user_id`. Ownership is re-checked in every action and route.
 - **Secrets:** environment variables only, `.env*` is git-ignored. Gmail refresh tokens and uploaded documents are encrypted with AES-256-GCM (`APP_ENCRYPTION_KEY`).
-- **Documents:** magic-byte type check (PDF/PNG/JPEG), 10 MB limit, encrypted at rest in PostgreSQL, served with `no-store` + sandbox CSP. Every view, upload and delete is audit-logged. Documents are **never** attached or sent automatically. Auto-deletion at the retention date is NOT_STARTED; delete them manually for now.
+- **Documents:** magic-byte type check (PDF/PNG/JPEG), 10 MB limit, encrypted at rest in PostgreSQL, served with `no-store` + sandbox CSP. Every view, upload and delete is audit-logged. Documents are **never** attached or sent automatically. If you set a retention date, the worker deletes the document automatically on the following day (daily job at 03:45 Berlin time, audit-logged).
 - **Nationality:** stored only in `applicant_profiles.private_notes`. It is never used in generated text, and the validator blocks nationality terms.
 - **Data minimization:** from the mailbox, only listing alerts and replies to your applications are stored. Other emails are not stored.
 - **Export & deletion:** Settings → export everything as JSON, or delete the account (cascades to all data).
