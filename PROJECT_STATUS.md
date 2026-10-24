@@ -50,6 +50,8 @@ Last updated: 2026-10-24. States: COMPLETED (implemented) · TESTED (implemented
 
 ## Blockers (need the user)
 
+0. **URGENT: the repository `dyzsb87z2v-bit/home-` is PUBLIC.** It contains the household facts from the brief: name, household composition and income (in templates and setup code). Make it private now: GitHub → Settings → General → Danger Zone → Change visibility → Private. Nationality data was removed from the code in a later commit, but it is still in the git history of branch `claude/berlin-rent-hunter-ai`.
+
 1. **GitHub:** this session can only access `dyzsb87z2v-bit/home-`, so the code lives there on branch `claude/berlin-rent-hunter-ai`. Creating a new private `berlin-rent-hunter-ai` repository needs your go-ahead, or you can create it and move the code.
 2. **Hosting:** pick a provider and approve the cost (estimate in `docs/deployment.md`).
 3. **Gmail:** create a Google OAuth client (Web), set the two env vars, then click "Connect Gmail" in Settings.

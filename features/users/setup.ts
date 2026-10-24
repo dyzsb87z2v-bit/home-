@@ -28,8 +28,9 @@ export async function setupUser(db: Database, userId: string, opts: { fullName: 
         pets: { value: null, verified: false },
         viewingAvailability: { value: null, verified: false },
       },
-      // Private — never used in generated messages.
-      privateNotes: { applicantNationality: "Iranian", partnerNationality: "Hungarian" },
+      // Private notes (e.g. nationality) are entered by the user in the app — never stored in source code
+      // and never used in generated messages.
+      privateNotes: {},
     })
     .onConflictDoNothing();
   await db.insert(schema.searchPreferences).values({ userId }).onConflictDoNothing();
