@@ -56,7 +56,7 @@ Last updated: 2026-10-24. States: COMPLETED (implemented) · TESTED (implemented
 2. **Hosting:** pick a provider and approve the cost (estimate in `docs/deployment.md`).
 3. **Gmail:** create a Google OAuth client (Web), set the two env vars, then click "Connect Gmail" in Settings.
 4. **Anthropic API key** (optional): needed for Persian translation of free text, AI extraction and AI reply classification.
-5. **Portal saved searches:** create them on each portal with your Gmail address. This is the only legitimate automated listing channel found for most sources.
+5. **Portal saved searches:** declined by the user (2026-10-24). Without them, the email-alert channel stays unused and listings come in only through manual import (paste a link and text) and any official feed you add. The alert parser remains in the code, inactive, in case this changes.
 
 ## Known problems / limitations
 
