@@ -1,0 +1,760 @@
+[
+  {
+    "slug": "immoscout24",
+    "name": "ImmoScout24",
+    "url": "https://www.immobilienscout24.de/Suche/de/berlin/berlin/spandau/wohnung-mieten",
+    "category": "PORTAL",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "HIGH",
+    "integrationOptions": [
+      "PARTNER_API",
+      "EMAIL_ALERTS"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Largest DE portal; Spandau search pages indexed 2026. Official REST API (api.immobilienscout24.de, OAuth 1.0a, developer account + sandbox; search resource is 2-legged) but positioned for realtors/partners; saved searches with email/push alerts. Third-party scrapers use private mobile API; anti-bot measures reported. Direct fetch blocked from sandbox (proxy 403/DNS); ToS/robots not verified."
+  },
+  {
+    "slug": "immowelt",
+    "name": "Immowelt (AVIV Germany)",
+    "url": "https://www.immowelt.de/suche/berlin-spandau/wohnungen",
+    "category": "PORTAL",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "HIGH",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Operated by AVIV Germany GmbH (renamed from immowelt GmbH Feb 2024; Axel Springer). Single-brand strategy 2026 absorbed Immonet. ~352 Spandau rentals seen in 2026 snapshot. Listing-import API key exists for agents (partner), no public search API found. Email alerts likely but not confirmed in this research. Direct fetch blocked from sandbox (proxy 403/DNS); ToS/robots not verified."
+  },
+  {
+    "slug": "immonet",
+    "name": "Immonet",
+    "url": "https://www.immowelt.de",
+    "category": "PORTAL",
+    "existsVerified": false,
+    "operatingStatus": "MERGED",
+    "longTermRental": null,
+    "spandauRelevance": "LOW",
+    "integrationOptions": [],
+    "scrapingRestricted": null,
+    "notes": "Merged into immowelt: AVIV announced one-brand strategy Jan 2026 (IZ 3 Feb 2026); trade press (Versicherungsbote, ~Mar 2026) reports immonet.de redirects to immowelt. immonet.de did not resolve from sandbox (Oct 2026). Do not integrate separately."
+  },
+  {
+    "slug": "kleinanzeigen",
+    "name": "Kleinanzeigen (formerly eBay Kleinanzeigen)",
+    "url": "https://www.kleinanzeigen.de/s-wohnung-mieten/spandau/c203l3430",
+    "category": "PORTAL",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "HIGH",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Spandau rental category page indexed. No official public/partner listing API found; datacenter IPs reportedly blocked. Saved-search alerts not confirmed in this research. Direct fetch blocked from sandbox (proxy 403/DNS); ToS/robots not verified."
+  },
+  {
+    "slug": "wg-gesucht",
+    "name": "WG-Gesucht",
+    "url": "https://www.wg-gesucht.de/wohnungen-in-Berlin.8.2.1.0.html",
+    "category": "PORTAL",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "MEDIUM",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Active (2026 pages incl. 'mietwohnungen-berlin'). Mix of WG rooms, temporary and unlimited flats. No official API found; community crawlers report reCAPTCHA on automated access. Email alerts not confirmed here. Direct fetch blocked from sandbox (proxy 403/DNS); ToS/robots not verified."
+  },
+  {
+    "slug": "wohnungsboerse",
+    "name": "Wohnungsbörse.net",
+    "url": "https://www.wohnungsboerse.net/Berlin_Spandau-Spandau/mietwohnungen",
+    "category": "PORTAL",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "MEDIUM",
+    "integrationOptions": [
+      "EMAIL_ALERTS"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Active (Mietspiegel pages updated May 2026; 172 Spandau results seen). Impressum names Immobilien Scout GmbH (Berlin) as operator, so listings likely overlap ImmoScout24. 'Suchauftrag anlegen' email alerts. Direct fetch blocked from sandbox (proxy 403/DNS); ToS/robots not verified."
+  },
+  {
+    "slug": "ivd24",
+    "name": "ivd24immobilien.de (IVD portal)",
+    "url": "https://www.ivd24immobilien.de",
+    "category": "PORTAL",
+    "existsVerified": null,
+    "operatingStatus": "UNKNOWN",
+    "longTermRental": true,
+    "spandauRelevance": "LOW",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Portal of IVD (only IVD-member agents list); ~75k listings in 2018. No 2025/26 evidence of status found; Berlin rental depth unknown."
+  },
+  {
+    "slug": "neubaukompass",
+    "name": "Neubau Kompass",
+    "url": "https://www.neubaukompass.de",
+    "category": "PORTAL",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": null,
+    "spandauRelevance": "LOW",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "neubau kompass AG (Munich, est. 2008): database of new-build developer projects, mainly for buyers; rental coverage unclear. Site content not retrieved."
+  },
+  {
+    "slug": "housinganywhere",
+    "name": "HousingAnywhere",
+    "url": "https://housinganywhere.com/s/Berlin--Germany/apartment-for-rent",
+    "category": "TEMPORARY_FURNISHED",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": false,
+    "spandauRelevance": "LOW",
+    "integrationOptions": [
+      "EMAIL_ALERTS"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Mid-term (typically 1-12 months) platform for students/expats; 1,285-3,032 Berlin listings seen; 'Get alerts' button on search pages."
+  },
+  {
+    "slug": "wunderflats",
+    "name": "Wunderflats",
+    "url": "https://wunderflats.com",
+    "category": "TEMPORARY_FURNISHED",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": false,
+    "spandauRelevance": "LOW",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Furnished stays from 1 month; active 2026 (landlord pages, 'Homelike alternative' page). Partnerships handled by contact (e.g. hotelnetsolutions); no public listing API found."
+  },
+  {
+    "slug": "homelike",
+    "name": "Homelike",
+    "url": "https://www.thehomelike.com",
+    "category": "TEMPORARY_FURNISHED",
+    "existsVerified": true,
+    "operatingStatus": "DEFUNCT",
+    "longTermRental": false,
+    "spandauRelevance": "LOW",
+    "integrationOptions": [],
+    "scrapingRestricted": null,
+    "notes": "Cologne furnished-apartment marketplace filed insolvency Jan 2025 and ceased operations end of March 2025 (deutsche-startups.de ticker, 1 Apr 2025). Exclude."
+  },
+  {
+    "slug": "spotahome",
+    "name": "Spotahome",
+    "url": "https://www.spotahome.com/berlin",
+    "category": "TEMPORARY_FURNISHED",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": false,
+    "spandauRelevance": "LOW",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Mid-term furnished rentals; active 2026 (Berlin data Oct 2025-Mar 2026, blog posts Jun-Aug 2026). No public API found."
+  },
+  {
+    "slug": "waitly",
+    "name": "Waitly",
+    "url": "https://waitly.eu",
+    "category": "ALERT_SERVICE",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": null,
+    "spandauRelevance": "UNKNOWN",
+    "integrationOptions": [
+      "EMAIL_ALERTS"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Waitlist platform (Waitly GmbH, founded 2019) for cooperatives/landlords; blog active Aug 2026 claims sign-up to multiple Berlin/Hamburg coop waitlists with notifications. Which Berlin coops participate not independently verified."
+  },
+  {
+    "slug": "wohnalert",
+    "name": "WohnAlert",
+    "url": "",
+    "category": "ALERT_SERVICE",
+    "existsVerified": false,
+    "operatingStatus": "UNKNOWN",
+    "longTermRental": null,
+    "spandauRelevance": "UNKNOWN",
+    "integrationOptions": [],
+    "scrapingRestricted": null,
+    "notes": "No evidence found of a service by this name (searches Oct 2026). Possibly confused with inberlinwohnen 'Angebotsalarm'. Do not include without a URL."
+  },
+  {
+    "slug": "degewo",
+    "name": "degewo",
+    "url": "https://www.degewo.de",
+    "category": "PUBLIC_HOUSING",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "HIGH",
+    "integrationOptions": [
+      "EMAIL_ALERTS"
+    ],
+    "scrapingRestricted": null,
+    "notes": "State-owned. Has Spandau stock & lettings (Senate answers); new build Bismarckstr. 17-19 (122 units, 98 subsidized) due mid-2026. Senate answer: applicants use subscribed Suchaufträge on degewo.de/ImmoScout24; no waitlists. Also listed via inberlinwohnen."
+  },
+  {
+    "slug": "gesobau",
+    "name": "GESOBAU",
+    "url": "https://www.gesobau.de",
+    "category": "PUBLIC_HOUSING",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "LOW",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "State-owned; 2026 Senate answer: no stock managed in Spandau (focus Pankow/Reinickendorf). Listings via own site/inberlinwohnen."
+  },
+  {
+    "slug": "gewobag",
+    "name": "Gewobag",
+    "url": "https://www.gewobag.de/fuer-mietinteressentinnen/mietangebote/",
+    "category": "PUBLIC_HOUSING",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "HIGH",
+    "integrationOptions": [
+      "EMAIL_ALERTS"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Largest landlord in Spandau: 18,022 units (30.06.2025); ~929-1,012 new lettings/yr there (2023-24). Senate answer: 74,147 active Suchaufträge on its site; also lists on ImmoScout24, Immowelt, immobilien.de, inberlinwohnen. Big Gartenfeld/Waterkant new builds."
+  },
+  {
+    "slug": "howoge",
+    "name": "HOWOGE",
+    "url": "https://www.howoge.de",
+    "category": "PUBLIC_HOUSING",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "MEDIUM",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "State-owned; 386 units in Spandau at 31.12.2025 incl. 231 new builds let from 2026 (Havelufer Quartier). Offers via own site, 'Meine HOWOGE' app, ImmoScout24, inberlinwohnen."
+  },
+  {
+    "slug": "stadtundland",
+    "name": "STADT UND LAND",
+    "url": "https://www.stadtundland.de",
+    "category": "PUBLIC_HOUSING",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "LOW",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "State-owned; 2026 Senate answer: no stock in Spandau."
+  },
+  {
+    "slug": "wbm",
+    "name": "WBM",
+    "url": "https://www.wbm.de",
+    "category": "PUBLIC_HOUSING",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "MEDIUM",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "State-owned. Spandau new builds Rauchstraße (BA1 238 units; BA2 111 units letting, move-in from May 2026, 62 WBS at 7 EUR/m2) and Staaken project; a 2026 Senate answer nonetheless says WBM manages no Spandau stock - conflicting."
+  },
+  {
+    "slug": "berlinovo",
+    "name": "berlinovo",
+    "url": "https://www.berlinovo.de",
+    "category": "PUBLIC_HOUSING",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": null,
+    "spandauRelevance": "LOW",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "State-owned; mainly furnished apartments, student and state-employee housing (~5,500 units to Landesbeschäftigte; new joint points system 2026). No Spandau specifics found."
+  },
+  {
+    "slug": "inberlinwohnen",
+    "name": "inberlinwohnen.de (joint portal of state-owned companies)",
+    "url": "https://inberlinwohnen.de/wohnungsfinder/",
+    "category": "AGGREGATOR",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "HIGH",
+    "integrationOptions": [
+      "EMAIL_ALERTS"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Bundles offers of the state-owned housing companies (degewo, GESOBAU, Gewobag, HOWOGE, STADT UND LAND, WBM; berlinovo is 7th LWU). 'Angebotsalarm' email via search profile (Berliner Mieterverein, ~2016; current status not re-verified). Best single integration target for public housing. Direct fetch blocked from sandbox (proxy 403/DNS); ToS/robots not verified."
+  },
+  {
+    "slug": "vonovia",
+    "name": "Vonovia",
+    "url": "https://www.vonovia.de",
+    "category": "PRIVATE_COMPANY",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "MEDIUM",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Largest private landlord; with Deutsche Wohnen ~140k Berlin units (2026), sold 14,750 to municipal cos in 2025. Spandau holdings exist (tenant reports) but size unknown. Listing page/alert features not confirmed. Expropriation debate in Berlin 2026."
+  },
+  {
+    "slug": "deutsche-wohnen",
+    "name": "Deutsche Wohnen (Vonovia group)",
+    "url": "https://www.deutsche-wohnen.com",
+    "category": "PRIVATE_COMPANY",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "MEDIUM",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Subsidiary of Vonovia (since 2021), still a separate brand. 2016 data: 2,362 publicly funded units in Spandau. Current listing channel not confirmed."
+  },
+  {
+    "slug": "heimstaden",
+    "name": "Heimstaden Germany",
+    "url": "https://www.heimstaden.de",
+    "category": "PRIVATE_COMPANY",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "MEDIUM",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Owns 484-unit complex at Päwesiner Weg, Spandau (first DE deal) and Berlin ex-Akelius stock; 'Wohnen am Ruhwaldpark' (Spandauer Damm) is in Charlottenburg. Listing page not retrieved."
+  },
+  {
+    "slug": "grandcity",
+    "name": "Grand City Properties",
+    "url": "https://www.grandcityproperty.de",
+    "category": "PRIVATE_COMPANY",
+    "existsVerified": null,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "UNKNOWN",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "~86k units, significant Berlin share; no Spandau-specific evidence; rental site not retrieved."
+  },
+  {
+    "slug": "tag-wohnen",
+    "name": "TAG Wohnen (TAG Immobilien)",
+    "url": "https://www.tag-wohnen.de",
+    "category": "PRIVATE_COMPANY",
+    "existsVerified": null,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "LOW",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "~80k units mostly eastern Germany; only ~300 in central Berlin (2019) plus ex-TLG stock. Rental site not retrieved."
+  },
+  {
+    "slug": "dpf",
+    "name": "DPF eG (Wohnungsbaugenossenschaft DPF Berlin)",
+    "url": "",
+    "category": "COOPERATIVE",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "LOW",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Coop founded 1957 (Deutsche Post); ~3,784 units in eastern districts (2009), office Gundelfinger Str. 8a, 10318 Berlin. 'Deutsche Wohnwerte' not found. Website URL not verified."
+  },
+  {
+    "slug": "maerkische-scholle",
+    "name": "Märkische Scholle Wohnungsunternehmen eG",
+    "url": "https://www.maerkische-scholle.de",
+    "category": "COOPERATIVE",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "LOW",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "~3,668 units in Reinickendorf, Wittenau, Schmargendorf, Wilmersdorf, Schöneberg, Tempelhof, Mariendorf, Lichterfelde (2020); none in Spandau. Membership required."
+  },
+  {
+    "slug": "freie-scholle",
+    "name": "Baugenossenschaft Freie Scholle (Berlin-Tegel)",
+    "url": "",
+    "category": "COOPERATIVE",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "LOW",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Founded 1895, >1,500 units exclusively in Reinickendorf (2026 job ad). Website URL not verified; not Bielefeld namesake."
+  },
+  {
+    "slug": "ideal",
+    "name": "IDEAL Wohnungsbaugenossenschaft",
+    "url": "",
+    "category": "COOPERATIVE",
+    "existsVerified": null,
+    "operatingStatus": "UNKNOWN",
+    "longTermRental": true,
+    "spandauRelevance": "UNKNOWN",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "No usable evidence found in searches; verify name/URL manually."
+  },
+  {
+    "slug": "evm-berlin",
+    "name": "EVM Berlin eG (Erbbauverein Moabit)",
+    "url": "https://www.evmberlin.de",
+    "category": "COOPERATIVE",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "UNKNOWN",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Paulsenstr. 39, 12163 Berlin (Steglitz) per Mieterverein list 12/2021. Spandau stock not confirmed."
+  },
+  {
+    "slug": "gewiwo",
+    "name": "GEWIWO Berlin Wohnungsbaugenossenschaft",
+    "url": "https://www.gewiwo.de",
+    "category": "COOPERATIVE",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "UNKNOWN",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Rathauspromenade 68, 13437 Berlin (Reinickendorf) per Mieterverein list 12/2021. Spandau stock not confirmed."
+  },
+  {
+    "slug": "charlotte1907",
+    "name": "Charlottenburger Baugenossenschaft eG",
+    "url": "https://charlotte1907.de",
+    "category": "COOPERATIVE",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "HIGH",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "~6,700 units; 2,518 in Spandau (Falkenhagener Feld, Hakenfelde, Siemensstadt etc.) per its district page. Membership required."
+  },
+  {
+    "slug": "1892",
+    "name": "Berliner Bau- und Wohnungsgenossenschaft von 1892 eG",
+    "url": "https://www.1892.de",
+    "category": "COOPERATIVE",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "MEDIUM",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "~7,000 units, Knobelsdorffstr. 96, 14050 Berlin; Spandau listed among its districts in a university presentation (2010), specific estates not confirmed."
+  },
+  {
+    "slug": "bwg-nord-ost-77",
+    "name": "Berliner Wohnungsgenossenschaft eG 'Nord-Ost 77'",
+    "url": "https://www.bwg-nord-ost-77.de",
+    "category": "COOPERATIVE",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "LOW",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Exact name per directory: Berliner Wohnungsgenossenschaft eG 'Nord-Ost 77', Lea-Grundig-Str. 26, 12679 Berlin; ~917 units in Marzahn/Hohenschönhausen. URL inferred from email domain, not verified."
+  },
+  {
+    "slug": "ohne-makler",
+    "name": "ohne-makler.net",
+    "url": "https://www.ohne-makler.net/immobilien/wohnung-mieten/berlin/berlin-bezirk-spandau/",
+    "category": "PORTAL",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "MEDIUM",
+    "integrationOptions": [
+      "EMAIL_ALERTS"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Commission-free portal with Spandau district pages; free email Suchaufträge (frequency 'sofort'). Mostly sales; few Spandau rentals seen."
+  },
+  {
+    "slug": "immobilien-de",
+    "name": "immobilien.de",
+    "url": "https://www.immobilien.de",
+    "category": "PORTAL",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "MEDIUM",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "National portal (Bad Tölz, since 1996); Spandau rentals syndicated to regional newspaper portals; Gewobag lists here (Senate answer)."
+  },
+  {
+    "slug": "meinestadt",
+    "name": "meinestadt.de Immobilien",
+    "url": "https://www.meinestadt.de/berlin/immobilien",
+    "category": "AGGREGATOR",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "MEDIUM",
+    "integrationOptions": [
+      "EMAIL_ALERTS"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Free Suchauftrag; disclaimer references immowelt.de as listing source (likely immowelt-fed, so duplicates)."
+  },
+  {
+    "slug": "trovit",
+    "name": "Trovit",
+    "url": "https://de.trovit.com/immobilien/mietwohnung-berlin-spandau",
+    "category": "AGGREGATOR",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "MEDIUM",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Metasearch aggregator with Spandau page; snapshot listings appeared stale (late 2025). Duplicates other portals."
+  },
+  {
+    "slug": "nestoria",
+    "name": "Nestoria",
+    "url": "https://www.nestoria.de",
+    "category": "AGGREGATOR",
+    "existsVerified": true,
+    "operatingStatus": "UNKNOWN",
+    "longTermRental": null,
+    "spandauRelevance": "LOW",
+    "integrationOptions": [
+      "EMAIL_ALERTS"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Berlin pages show '0 Wohnungen mieten' in 2026 search snapshots - likely no longer populated. Exclude unless re-verified."
+  },
+  {
+    "slug": "wohnglueck",
+    "name": "Wohnglück.de",
+    "url": "https://wohnglueck.de",
+    "category": "PORTAL",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "LOW",
+    "integrationOptions": [
+      "EMAIL_ALERTS"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Portal with Suchauftrag service; Wilhelmstadt (Spandau) listing seen."
+  },
+  {
+    "slug": "wohnungsbaugenossenschaften-de",
+    "name": "Wohnungsbaugenossenschaften Berlin (wohnungsbaugenossenschaften.de)",
+    "url": "https://www.wohnungsbaugenossenschaften.de",
+    "category": "AGGREGATOR",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": null,
+    "spandauRelevance": "MEDIUM",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Marketing initiative of Berlin cooperatives; 2018 flyer lists member coops by Ortsteil incl. Haselhorst, Siemensstadt, Spandau, Staaken. Useful directory; live listing search not confirmed."
+  },
+  {
+    "slug": "gartenstadt-staaken",
+    "name": "Wohnungsbaugenossenschaft Gartenstadt Staaken eG",
+    "url": "",
+    "category": "COOPERATIVE",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "HIGH",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Founded 1913, heritage-listed estate in Staaken; Am Heideberg 12, 13591 Berlin (ortsdienst directory). Unit count/website not verified."
+  },
+  {
+    "slug": "gross-berlin",
+    "name": "Wohnbau-Genossenschaft Groß-Berlin eG",
+    "url": "",
+    "category": "COOPERATIVE",
+    "existsVerified": null,
+    "operatingStatus": "UNKNOWN",
+    "longTermRental": true,
+    "spandauRelevance": "UNKNOWN",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Listed in ortsdienst directory near Falkenhagener Feld (Spandau); stock location not confirmed."
+  },
+  {
+    "slug": "postheimstaette",
+    "name": "Bau- und Siedlungsgenossenschaft Postheimstätte eG",
+    "url": "",
+    "category": "COOPERATIVE",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "UNKNOWN",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Berlin coop (active 2026 job ads); listed in directory near Falkenhagener Feld; Spandau stock not confirmed."
+  },
+  {
+    "slug": "vaterland",
+    "name": "Baugenossenschaft 'Vaterland' eG",
+    "url": "",
+    "category": "COOPERATIVE",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "UNKNOWN",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Founded 1920, Alboinstr. 33, 12103 (Tempelhof); appears in 2018 coop flyer alongside Spandau Ortsteile; Spandau stock not confirmed."
+  },
+  {
+    "slug": "baugenossenschaft-spandau",
+    "name": "'Baugenossenschaft Spandau' / 'Wohnungsbaugenossenschaft Spandau'",
+    "url": "",
+    "category": "COOPERATIVE",
+    "existsVerified": false,
+    "operatingStatus": "UNKNOWN",
+    "longTermRental": null,
+    "spandauRelevance": "UNKNOWN",
+    "integrationOptions": [],
+    "scrapingRestricted": null,
+    "notes": "No evidence of a coop by this name found. Senate data: ~5,500 coop units in Spandau overall (2014)."
+  },
+  {
+    "slug": "covivio",
+    "name": "Covivio (Germany residential)",
+    "url": "https://www.covivio.immo",
+    "category": "PRIVATE_COMPANY",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "MEDIUM",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": ">17,000 Berlin units (2022); 552-unit portfolio acquired 2023 includes Spandau assets. Listing page not retrieved."
+  },
+  {
+    "slug": "adler",
+    "name": "ADLER Group",
+    "url": "https://www.adler-group.com",
+    "category": "PRIVATE_COMPANY",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "UNKNOWN",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Refocused on Berlin rentals (Feb 2026), ~18-26k units; Spandau share unknown; possible sale discussed 2025."
+  },
+  {
+    "slug": "hws",
+    "name": "Hilfswerk-Siedlung GmbH (Evangelisches Wohnungsunternehmen)",
+    "url": "https://www.hws-berlin.de",
+    "category": "PROPERTY_MANAGER",
+    "existsVerified": true,
+    "operatingStatus": "ACTIVE",
+    "longTermRental": true,
+    "spandauRelevance": "UNKNOWN",
+    "integrationOptions": [
+      "WEBSITE_ONLY"
+    ],
+    "scrapingRestricted": null,
+    "notes": "Church housing company managing ~10,000 own/third-party units in Berlin/Brandenburg (HRB 5011). Spandau stock not confirmed; URL from 2016 press contact."
+  }
+]
