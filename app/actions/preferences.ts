@@ -56,7 +56,7 @@ export async function saveSearchPreferencesAction(_prev: ActionResult | null, fo
 export async function saveNotificationPrefsAction(form: FormData) {
   const user = await requireUser();
   const prefs: Record<string, { inApp: boolean; push: boolean; email: boolean }> = {};
-  for (const c of NOTIFICATION_CATEGORIES) prefs[c] = { inApp: form.get(`${c}.inApp`) === "on", push: form.get(`${c}.push`) === "on", email: false };
+  for (const c of NOTIFICATION_CATEGORIES) prefs[c] = { inApp: form.get(`${c}.inApp`) === "on", push: form.get(`${c}.push`) === "on", email: form.get(`${c}.email`) === "on" };
   await getDb().update(schema.searchPreferences).set({ notificationPrefs: prefs }).where(eq(schema.searchPreferences.userId, user.id));
   revalidatePath("/settings");
 }

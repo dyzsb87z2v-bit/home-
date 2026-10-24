@@ -549,6 +549,7 @@
     "pushNotConfigured": "Web-Push ist auf dem Server nicht konfiguriert (VAPID-Schlüssel).",
     "notifications": "Benachrichtigungsarten",
     "channelInApp": "In der App",
+    "channelEmail": "E-Mail",
     "channelPush": "Push",
     "privacy": "Datenschutz",
     "export": "Alle meine Daten exportieren (JSON)",

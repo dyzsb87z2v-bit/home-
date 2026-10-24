@@ -31,6 +31,7 @@ async function main() {
   await boss.work(Q.processProperty, wrap(Q.processProperty, h.handleProcessProperty));
   await boss.work(Q.followUpScan, wrap(Q.followUpScan, h.handleFollowUpScan));
   await boss.work(Q.listingExpiry, wrap(Q.listingExpiry, h.handleListingExpiry));
+  await boss.work(Q.documentRetention, wrap(Q.documentRetention, h.handleDocumentRetention));
   await boss.work(Q.health, wrap(Q.health, h.handleHealth));
   await boss.work(Q.deadLetter, async (jobs: Array<{ id: string; data: unknown }>) => {
     for (const j of jobs) await h.handleDeadLetter(j);
@@ -42,6 +43,7 @@ async function main() {
   await boss.schedule(Q.health, "*/5 * * * *", {}, tz);
   await boss.schedule(Q.followUpScan, "17 * * * *", {}, tz);
   await boss.schedule(Q.listingExpiry, "30 3 * * *", {}, tz);
+  await boss.schedule(Q.documentRetention, "45 3 * * *", {}, tz);
   await h.handleHealth();
   log("info", "worker started", { queues: Object.values(Q) });
 

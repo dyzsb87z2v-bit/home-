@@ -549,6 +549,7 @@
     "pushNotConfigured": "Web Push روی سرور پیکربندی نشده است (کلیدهای VAPID).",
     "notifications": "انواع اعلان",
     "channelInApp": "داخل برنامه",
+    "channelEmail": "ایمیل",
     "channelPush": "Push",
     "privacy": "حریم خصوصی",
     "export": "خروجی گرفتن از همهٔ داده‌های من (JSON)",

@@ -43,6 +43,8 @@ export async function syncEmailAccount(accountId: string) {
       if (knownSet.has(ref.id)) continue;
       const msg = await provider.getMessage(ref.id);
       const fromAddr = emailAddressOf(msg.from);
+      // Our own notification emails (sent to the user's own address) are never treated as replies.
+      if (fromAddr === account.emailAddress.toLowerCase()) continue;
 
       if (patternForSender(fromAddr)) {
         alerts += await handleAlert(userId, account.id, msg);
