@@ -30,7 +30,7 @@ Alternatives: Railway or Fly.io (usage-based, similar total), or a single small 
 - [ ] Optional: VAPID keys (`npx web-push generate-vapid-keys`)
 - [ ] Deploy web + worker. Check that `GET /api/health` returns `db: ok` and `worker: ok`.
 - [ ] Create the login: `npm run user:create` (one-off job with `BRH_EMAIL`, `BRH_PASSWORD`)
-- [ ] Log in, connect Gmail, review the profile, create portal saved searches with your Gmail address
+- [ ] Log in, connect Gmail, review the profile
 - [ ] Enable database backups (the managed Postgres plan includes daily backups; check retention)
 - [ ] Watch the Agent Activity page and the Sources page for the first real alert emails
 

@@ -19,7 +19,7 @@ Classification: `ELIGIBLE` / `INELIGIBLE` / `NEEDS_VERIFICATION`, each with reas
 
 ## How listings get in (legally and honestly)
 
-1. **Portal alert emails** (recommended). You create saved searches on ImmoScout24, Gewobag, degewo, inBerlinWohnen and other portals, using your Gmail address. The worker reads them through Gmail OAuth (read-only) and parses the listing links and facts.
+1. **Portal alert emails** (optional, currently not used). If you create saved searches on ImmoScout24, Gewobag, degewo, inBerlinWohnen and other portals, using your Gmail address, the worker reads them through Gmail OAuth (read-only) and parses the listing links and facts.
 2. **Official feeds.** If a provider publishes an RSS, Atom or JSON feed, paste its URL on the Sources page. The fetcher identifies itself, honours `robots.txt`, rate-limits each host and backs off.
 3. **Manual import.** Paste a listing URL and its text. Optionally Claude extracts the facts, and a fact is kept only if Claude quotes evidence for it from the text.
 
