@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getCurrentUser } from "@/lib/auth";
+import { Link } from "@/lib/localization/navigation";
 import { LoginForm } from "./login-form";
 
 export default async function LoginPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -27,9 +28,9 @@ export default async function LoginPage({ params }: { params: Promise<{ locale: 
 function LanguageSwitchPublic() {
   return (
     <div className="flex justify-center gap-4 text-sm">
-      <a href="/fa/login" lang="fa">فارسی</a>
+      <Link href="/login" locale="fa" lang="fa">فارسی</Link>
       <span className="text-muted">|</span>
-      <a href="/de/login" lang="de">Deutsch</a>
+      <Link href="/login" locale="de" lang="de">Deutsch</Link>
     </div>
   );
 }

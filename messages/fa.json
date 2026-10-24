@@ -507,30 +507,30 @@
       "WARNING": "هشدار"
     },
     "actions": {
-      "listing.discovered": "آپارتمان جدید پیدا شد",
-      "listing.eligible": "مناسب تشخیص داده شد",
-      "listing.rejected": "رد شد",
-      "listing.needs_verification": "نیاز به بررسی",
-      "listing.duplicate_merged": "آگهی تکراری ادغام شد",
-      "listing.imported": "آگهی وارد شد",
-      "listing.facts_confirmed": "اطلاعات توسط کاربر تأیید شد",
-      "application.generated": "درخواست تهیه شد",
-      "application.submitted": "درخواست ارسال شد",
-      "application.submission_failed": "ارسال ناموفق بود",
-      "application.blocked": "ارسال متوقف شد",
-      "application.marked_submitted": "ارسال دستی ثبت شد",
-      "followup.prepared": "ایمیل پیگیری آماده شد",
-      "followup.sent": "ایمیل پیگیری ارسال شد",
-      "followup.failed": "پیگیری ناموفق بود",
-      "reply.received": "پاسخ دریافت شد",
-      "reply.viewing_invitation": "دعوت به بازدید تشخیص داده شد",
-      "source.sync_succeeded": "منبع همگام‌سازی شد",
-      "source.sync_failed": "منبع موقتاً در دسترس نیست",
-      "source.alert_processed": "ایمیل هشدار آگهی پردازش شد",
-      "email.sync_failed": "دریافت ایمیل ناموفق بود",
-      "email.connected": "حساب ایمیل متصل شد",
-      "job.dead_lettered": "کار پس‌زمینه برای همیشه ناموفق ماند",
-      "automation.changed": "تنظیمات اتوماسیون تغییر کرد"
+      "listing_discovered": "آپارتمان جدید پیدا شد",
+      "listing_eligible": "مناسب تشخیص داده شد",
+      "listing_rejected": "رد شد",
+      "listing_needs_verification": "نیاز به بررسی",
+      "listing_duplicate_merged": "آگهی تکراری ادغام شد",
+      "listing_imported": "آگهی وارد شد",
+      "listing_facts_confirmed": "اطلاعات توسط کاربر تأیید شد",
+      "application_generated": "درخواست تهیه شد",
+      "application_submitted": "درخواست ارسال شد",
+      "application_submission_failed": "ارسال ناموفق بود",
+      "application_blocked": "ارسال متوقف شد",
+      "application_marked_submitted": "ارسال دستی ثبت شد",
+      "followup_prepared": "ایمیل پیگیری آماده شد",
+      "followup_sent": "ایمیل پیگیری ارسال شد",
+      "followup_failed": "پیگیری ناموفق بود",
+      "reply_received": "پاسخ دریافت شد",
+      "reply_viewing_invitation": "دعوت به بازدید تشخیص داده شد",
+      "source_sync_succeeded": "منبع همگام‌سازی شد",
+      "source_sync_failed": "منبع موقتاً در دسترس نیست",
+      "source_alert_processed": "ایمیل هشدار آگهی پردازش شد",
+      "email_sync_failed": "دریافت ایمیل ناموفق بود",
+      "email_connected": "حساب ایمیل متصل شد",
+      "job_dead_lettered": "کار پس‌زمینه برای همیشه ناموفق ماند",
+      "automation_changed": "تنظیمات اتوماسیون تغییر کرد"
     }
   },
   "settings": {
@@ -572,5 +572,11 @@
     "INTEGRATION_FAILED": "خطای اتصال: {title} ({code})",
     "JOB_FAILING": "یک کار پس‌زمینه پیوسته ناموفق است",
     "SUSPICIOUS_MESSAGE": "پیام مشکوک: {subject}"
+  },
+  "navShort": {
+    "overview": "خانه",
+    "apartments": "مناسب‌ها",
+    "applications": "درخواست‌ها",
+    "replies": "پاسخ‌ها"
   }
 }

@@ -232,6 +232,8 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
                     listingUrl={links[0]?.l.url ?? null}
                   />
                 ))
+              ) : p.eligibility === "INELIGIBLE" ? (
+                <p className="text-sm text-muted">{t("applications.blockCodes.NOT_ELIGIBLE")}</p>
               ) : (
                 <ActionForm action={createDraftAction} submitLabel={t("applications.createDraft")} hidden={{ propertyId: p.id }} successText={t("applications.draft")} />
               )}

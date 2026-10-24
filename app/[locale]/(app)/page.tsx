@@ -6,12 +6,14 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { EmptyState, PageHeader } from "@/components/ui/empty";
 import { requireUser } from "@/lib/auth";
+import { actionKey } from "@/lib/localization/activity";
 import { getDb, schema } from "@/lib/database/client";
 import { countByEligibility, listProperties } from "@/lib/data/properties";
 import { Link } from "@/lib/localization/navigation";
 import { formatDateTime, formatNum } from "@/lib/utils";
 import { aiConfigured } from "@/integrations/ai/claude";
 import { getPreferences } from "@/features/matching/preferences";
+import { isHeartbeatFresh } from "@/jobs/health";
 
 export default async function OverviewPage() {
   const user = await requireUser();
@@ -31,8 +33,7 @@ export default async function OverviewPage() {
     db.select({ n: count() }).from(schema.sourceConnections).where(and(eq(schema.sourceConnections.userId, user.id), eq(schema.sourceConnections.enabled, true), inArray(schema.sourceConnections.state, ["CONNECTED", "ALERTS_ONLY", "PARTIALLY_CONNECTED"]))),
   ]);
   const hb = heartbeat[0]?.value as { at: string } | undefined;
-  const hbAge = hb ? Date.now() - new Date(hb.at).getTime() : null;
-  const workerOk = hbAge != null && hbAge < 15 * 60_000;
+  const workerOk = isHeartbeatFresh(hb?.at);
   const account = accounts.find((a) => a.status === "CONNECTED");
 
   const stats = [
@@ -125,7 +126,7 @@ export default async function OverviewPage() {
                 <ul className="space-y-2 text-sm">
                   {recent.map((a) => (
                     <li key={a.id} className="flex items-start justify-between gap-2">
-                      <span>{t.has(`activity.actions.${a.action}`) ? t(`activity.actions.${a.action}`) : a.action}</span>
+                      <span>{t.has(actionKey(a.action)) ? t(actionKey(a.action)) : a.action}</span>
                       <span className="shrink-0 text-xs text-muted">{formatDateTime(a.at, locale)}</span>
                     </li>
                   ))}

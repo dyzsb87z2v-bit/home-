@@ -61,7 +61,7 @@ export function textSimilarity(a: string | null, b: string | null): number {
   return inter / (A.size + B.size - inter);
 }
 
-type Comparable = Pick<NormalizedListing, "postalCode" | "rooms" | "areaSqm" | "warmRentEur" | "coldRentEur" | "title" | "descriptionDe" | "street">;
+type Comparable = Pick<NormalizedListing, "postalCode" | "rooms" | "areaSqm" | "warmRentEur" | "coldRentEur" | "title" | "descriptionDe" | "street" | "houseNumber">;
 
 /**
  * Fuzzy duplicate check for listings lacking a shared fingerprint (e.g. one source publishes
@@ -77,7 +77,12 @@ export function isLikelyDuplicate(a: Comparable, b: Comparable): boolean {
   if (ra == null || rb == null || Math.abs(ra - rb) / Math.max(ra, rb) > 0.02) return false;
   const sa = normalizeStreet(a.street);
   const sb = normalizeStreet(b.street);
-  if (sa && sb) return sa === sb;
+  if (sa && sb) {
+    if (sa !== sb) return false;
+    const ha = a.houseNumber?.toLowerCase().replace(/\s/g, "");
+    const hb = b.houseNumber?.toLowerCase().replace(/\s/g, "");
+    return !ha || !hb || ha === hb;
+  }
   const sim = Math.max(textSimilarity(a.title, b.title), textSimilarity(a.descriptionDe, b.descriptionDe));
   return sim >= 0.5;
 }

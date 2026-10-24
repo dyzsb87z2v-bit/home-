@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { Button } from "@/components/ui/button";
 
 function urlBase64ToUint8Array(base64: string) {
@@ -12,18 +12,20 @@ function urlBase64ToUint8Array(base64: string) {
 
 export function PushToggle({ vapidKey }: { vapidKey: string | null }) {
   const t = useTranslations("settings");
-  const [state, setState] = useState<"unsupported" | "idle" | "enabled" | "busy">("idle");
+  const supported = useSyncExternalStore(
+    () => () => undefined,
+    () => "serviceWorker" in navigator && "PushManager" in window,
+    () => true,
+  );
+  const [state, setState] = useState<"idle" | "enabled" | "busy">("idle");
 
   useEffect(() => {
-    if (!("serviceWorker" in navigator) || !("PushManager" in window)) {
-      setState("unsupported");
-      return;
-    }
+    if (!supported) return;
     navigator.serviceWorker.ready.then((reg) => reg.pushManager.getSubscription()).then((s) => s && setState("enabled")).catch(() => undefined);
-  }, []);
+  }, [supported]);
 
   if (!vapidKey) return <p className="text-sm text-muted">{t("pushNotConfigured")}</p>;
-  if (state === "unsupported") return <p className="text-sm text-muted">{t("pushUnsupported")}</p>;
+  if (!supported) return <p className="text-sm text-muted">{t("pushUnsupported")}</p>;
 
   const enable = async () => {
     setState("busy");

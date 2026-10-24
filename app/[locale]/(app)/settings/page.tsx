@@ -70,6 +70,7 @@ export default async function SettingsPage({ searchParams }: { searchParams: Pro
             </div>
           ))}
           {gmailConfigured() ? (
+            // eslint-disable-next-line @next/next/no-html-link-for-pages -- API route (OAuth redirect), not a page
             <a href="/api/email/google/start" className="inline-flex min-h-10 items-center rounded-lg bg-primary px-4 text-sm font-medium text-primary-fg">{t("inbox.connect")}</a>
           ) : (
             <p className="text-muted">{t("inbox.notConfigured")}</p>
@@ -125,6 +126,7 @@ export default async function SettingsPage({ searchParams }: { searchParams: Pro
       <Card>
         <CardHeader><CardTitle>{t("settings.privacy")}</CardTitle></CardHeader>
         <CardContent className="space-y-4 text-sm">
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- file download from API route */}
           <a href="/api/export" className="inline-flex min-h-10 items-center rounded-lg border border-border px-4">{t("settings.export")}</a>
           <form action={deleteAccountAction} className="flex flex-wrap items-end gap-2">
             <div>

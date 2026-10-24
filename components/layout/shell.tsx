@@ -15,6 +15,7 @@ function isActive(pathname: string, href: string) {
 export function Shell({ children, unread, logoutAction }: { children: React.ReactNode; unread: number; logoutAction: () => Promise<void> }) {
   const t = useTranslations("nav");
   const ta = useTranslations("app");
+  const ts = useTranslations("navShort");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -97,7 +98,7 @@ export function Shell({ children, unread, logoutAction }: { children: React.Reac
                 <li key={item.href}>
                   <Link href={item.href} aria-current={active ? "page" : undefined} className={cn("flex min-h-14 flex-col items-center justify-center gap-0.5 text-[11px]", active ? "text-primary" : "text-muted")}>
                     <item.icon className="h-5 w-5" aria-hidden />
-                    <span className="max-w-full truncate px-1">{t(item.key)}</span>
+                    <span className="max-w-full truncate px-1">{ts.has(item.key) ? ts(item.key) : t(item.key)}</span>
                   </Link>
                 </li>
               );

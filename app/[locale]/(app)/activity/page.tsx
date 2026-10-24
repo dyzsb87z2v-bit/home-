@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { EmptyState, PageHeader } from "@/components/ui/empty";
 import { requireUser } from "@/lib/auth";
+import { actionKey } from "@/lib/localization/activity";
 import { getDb, schema } from "@/lib/database/client";
 import { Link } from "@/lib/localization/navigation";
 import { formatDateTime } from "@/lib/utils";
@@ -38,7 +39,7 @@ export default async function ActivityPage({ searchParams }: { searchParams: Pro
               <li key={a.id} className="space-y-1 p-4 text-sm">
                 <div className="flex flex-wrap items-center gap-2">
                   <Badge tone={tone(a.result)}>{t(`activity.result.${a.result}`)}</Badge>
-                  <span className="font-medium">{t.has(`activity.actions.${a.action}`) ? t(`activity.actions.${a.action}`) : a.action}</span>
+                  <span className="font-medium">{t.has(actionKey(a.action)) ? t(actionKey(a.action)) : a.action}</span>
                   <time className="ms-auto text-xs text-muted" dateTime={a.at.toISOString()}>{formatDateTime(a.at, locale)}</time>
                 </div>
                 <div className="flex flex-wrap gap-x-3 text-xs text-muted">

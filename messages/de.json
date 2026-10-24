@@ -507,30 +507,30 @@
       "WARNING": "Hinweis"
     },
     "actions": {
-      "listing.discovered": "Neue Wohnung entdeckt",
-      "listing.eligible": "Als passend eingestuft",
-      "listing.rejected": "Abgelehnt",
-      "listing.needs_verification": "Prüfung erforderlich",
-      "listing.duplicate_merged": "Duplikat zusammengeführt",
-      "listing.imported": "Anzeige importiert",
-      "listing.facts_confirmed": "Angaben vom Nutzer bestätigt",
-      "application.generated": "Bewerbung erstellt",
-      "application.submitted": "Bewerbung gesendet",
-      "application.submission_failed": "Senden fehlgeschlagen",
-      "application.blocked": "Senden blockiert",
-      "application.marked_submitted": "Manuell eingereicht",
-      "followup.prepared": "Nachfass-E-Mail vorbereitet",
-      "followup.sent": "Nachfass-E-Mail gesendet",
-      "followup.failed": "Nachfassen fehlgeschlagen",
-      "reply.received": "Antwort erhalten",
-      "reply.viewing_invitation": "Besichtigungseinladung erkannt",
-      "source.sync_succeeded": "Quelle synchronisiert",
-      "source.sync_failed": "Quelle vorübergehend nicht erreichbar",
-      "source.alert_processed": "Suchauftrags-E-Mail verarbeitet",
-      "email.sync_failed": "E-Mail-Abruf fehlgeschlagen",
-      "email.connected": "E-Mail-Konto verbunden",
-      "job.dead_lettered": "Hintergrundjob endgültig fehlgeschlagen",
-      "automation.changed": "Automatisierung geändert"
+      "listing_discovered": "Neue Wohnung entdeckt",
+      "listing_eligible": "Als passend eingestuft",
+      "listing_rejected": "Abgelehnt",
+      "listing_needs_verification": "Prüfung erforderlich",
+      "listing_duplicate_merged": "Duplikat zusammengeführt",
+      "listing_imported": "Anzeige importiert",
+      "listing_facts_confirmed": "Angaben vom Nutzer bestätigt",
+      "application_generated": "Bewerbung erstellt",
+      "application_submitted": "Bewerbung gesendet",
+      "application_submission_failed": "Senden fehlgeschlagen",
+      "application_blocked": "Senden blockiert",
+      "application_marked_submitted": "Manuell eingereicht",
+      "followup_prepared": "Nachfass-E-Mail vorbereitet",
+      "followup_sent": "Nachfass-E-Mail gesendet",
+      "followup_failed": "Nachfassen fehlgeschlagen",
+      "reply_received": "Antwort erhalten",
+      "reply_viewing_invitation": "Besichtigungseinladung erkannt",
+      "source_sync_succeeded": "Quelle synchronisiert",
+      "source_sync_failed": "Quelle vorübergehend nicht erreichbar",
+      "source_alert_processed": "Suchauftrags-E-Mail verarbeitet",
+      "email_sync_failed": "E-Mail-Abruf fehlgeschlagen",
+      "email_connected": "E-Mail-Konto verbunden",
+      "job_dead_lettered": "Hintergrundjob endgültig fehlgeschlagen",
+      "automation_changed": "Automatisierung geändert"
     }
   },
   "settings": {
@@ -572,5 +572,11 @@
     "INTEGRATION_FAILED": "Integrationsfehler: {title} ({code})",
     "JOB_FAILING": "Hintergrundjob schlägt wiederholt fehl",
     "SUSPICIOUS_MESSAGE": "Verdächtige Nachricht: {subject}"
+  },
+  "navShort": {
+    "overview": "Übersicht",
+    "apartments": "Wohnungen",
+    "applications": "Bewerbungen",
+    "replies": "Antworten"
   }
 }

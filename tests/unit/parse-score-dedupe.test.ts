@@ -117,3 +117,11 @@ describe("dedupe", () => {
     expect(isLikelyDuplicate(a, { ...a, warmRentEur: 1180 })).toBe(false);
   });
 });
+
+describe("dedupe — house numbers", () => {
+  it("same street, different house numbers are different apartments", () => {
+    const a = { ...emptyListing("a"), postalCode: "13595", street: "Teststraße", houseNumber: "1", rooms: 3, areaSqm: 70, warmRentEur: 1100 };
+    expect(isLikelyDuplicate(a, { ...a, houseNumber: "2" })).toBe(false);
+    expect(isLikelyDuplicate(a, { ...a })).toBe(true);
+  });
+});

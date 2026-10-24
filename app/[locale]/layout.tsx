@@ -43,6 +43,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        {/* eslint-disable-next-line @next/next/no-page-custom-font -- loaded in the shared locale layout (applies to every page) */}
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" />
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
       </head>

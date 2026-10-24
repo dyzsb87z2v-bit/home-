@@ -91,13 +91,16 @@ export function parseAlertEmail(input: { from: string; subject: string; html?: s
 
   const sourceText = links.length ? html : input.text ?? "";
   return hits.map((hit, i) => {
-    // The part of the email belonging to this listing: halfway to the neighbouring listing links.
-    const prev = hits[i - 1];
+    // The part of the email belonging to this listing: from its first link up to the next listing's
+    // first link (alert layouts put image/title link first, details after). Fallback: text before it.
     const next = hits[i + 1];
-    const start = prev ? Math.floor((prev.index + hit.index) / 2) : Math.max(0, hit.index - 1500);
-    const end = next ? Math.floor((hit.index + next.index) / 2) : Math.min(sourceText.length, hit.index + 3000);
-    const block = sourceText.slice(start, end);
-    const blockText = links.length ? htmlToText(block) : block;
+    const end = next ? next.index : Math.min(sourceText.length, hit.index + 3000);
+    let block = sourceText.slice(hit.index, end);
+    let blockText = links.length ? htmlToText(block) : block;
+    if (!/\d\s*(zimmer|zi\.|m²|m2|qm|€)/i.test(blockText)) {
+      block = sourceText.slice(Math.max(i ? hits[i - 1]!.index : 0, hit.index - 1000), end);
+      blockText = links.length ? htmlToText(block) : block;
+    }
     const title = links.find((l) => l.index >= hit.index && l.text.length > 8)?.text ?? null;
     const l = listingFromText(pattern.slug, {
       title,
