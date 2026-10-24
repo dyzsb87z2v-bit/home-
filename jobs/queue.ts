@@ -16,13 +16,17 @@ export type QueueName = (typeof Q)[keyof typeof Q];
 
 let starting: Promise<PgBoss> | null = null;
 
-/** Durable Postgres-backed queue (survives restarts; no user device needs to be online). */
-export function getBoss(): Promise<PgBoss> {
+/**
+ * Durable Postgres-backed queue (survives restarts; no user device needs to be online).
+ * Only the worker process runs cron scheduling and maintenance; the web process just enqueues.
+ */
+export function getBoss(role: "worker" | "client" = "client"): Promise<PgBoss> {
   if (!starting) {
     starting = (async () => {
       const url = process.env.DATABASE_URL;
       if (!url) throw new Error("DATABASE_URL is not set");
-      const b = new PgBoss({ connectionString: url, schema: "pgboss" });
+      const worker = role === "worker";
+      const b = new PgBoss({ connectionString: url, schema: "pgboss", schedule: worker, supervise: worker, max: worker ? 10 : 3 });
       b.on("error", (e: unknown) => console.error(JSON.stringify({ level: "error", msg: "pg-boss error", err: String(e) })));
       await b.start();
       await b.createQueue(Q.deadLetter, {});

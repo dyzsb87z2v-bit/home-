@@ -8,7 +8,7 @@ import * as h from "@/jobs/handlers";
 import { getBoss, Q } from "@/jobs/queue";
 
 async function main() {
-  const boss = await getBoss();
+  const boss = await getBoss("worker");
   const wrap =
     <T,>(name: string, fn: (data: T) => Promise<unknown>) =>
     async (jobs: Array<{ id: string; data: T }>) => {
